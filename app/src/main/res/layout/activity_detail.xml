@@ -1,76 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/download" />
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/field1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 1" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/download" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harry Potter" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 2" />
 
-    <EditText
-        android:id="@+id/field3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 3" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alt Name: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/alternate_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harry Potter" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 4" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Species: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/spieces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harry Potter" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 5" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 6" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="House : " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/house"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="House" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field7"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 7" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="12/12/1998" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 8" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wizard: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/wizard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="True" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 9" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ancestry: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/ancestry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="German" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/field10"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Field 10" />
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Eye Colour: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/eyeColour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blue" />
+        </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hair Colour: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/hairColour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Black" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wand: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/wand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="wand" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actor: " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/core"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Core" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alive : " />
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/wood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Holly" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
