@@ -16,10 +16,11 @@ import java.util.List;
 
 public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.ViewHolder> {
     Context ctxs;
-    private List<Characters> characters;
+    List<Characters> characters;
 
-    public CharactersAdapter(List<Characters> characters) {
+    public CharactersAdapter(Context ctxs, List<Characters> characters) {
         this.characters = characters;
+        this.ctxs = ctxs;
     }
 
     @NonNull
@@ -49,18 +50,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView name;
-        public TextView alternate_name;
-        public TextView species;
-        public Context ctxs;
         public TextView gender;
-        public TextView house;
         public TextView dateOfBirth;
-        public TextView wizard;
         public TextView ancestry;
-        public TextView eyeColour;
-        public TextView hairColour;
-        public TextView wand;
-        public TextView wood;
         public ImageView images;
 
         public ViewHolder(@NonNull View itemView) {
@@ -71,10 +63,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             ancestry = itemView.findViewById(R.id.ancestry);
             dateOfBirth = itemView.findViewById(R.id.dateOfBirth);
             images = itemView.findViewById(R.id.image);
-        }
-        public void setImage(Context ctxs,String image) {
-            Glide.with(ctxs).load(image).into(images);
-
         }
 
     }
