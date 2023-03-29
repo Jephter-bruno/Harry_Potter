@@ -34,8 +34,8 @@ List<Characters> characters = new ArrayList<>();
         RetrofitClient.getRetrofitClient().getCharacters().enqueue(new Callback<List<Characters>>() {
             @Override
             public void onResponse(Call<List<Characters>> call, Response<List<Characters>> response) {
-                 if(response.isSuccessful()&& response.body() != null){
-                     List<Characters> characters = response.body();
+                List<Characters> characters = response.body();
+                if(response.isSuccessful()&& response.body() != null){
                      characters.addAll(response.body());
                     charactersAdapter.notifyDataSetChanged();
                      Toast.makeText(MainActivity.this, "Characters Found", Toast.LENGTH_SHORT).show();
