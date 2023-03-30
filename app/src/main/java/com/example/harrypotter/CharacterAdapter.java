@@ -11,19 +11,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder> {
+public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.MovieHolder> {
 
     private Context context;
     private List<Characters> characterlist;
 
-    public MovieAdapter(Context context , List<Characters> characters){
+    public CharacterAdapter(Context context , List<Characters> characters){
         this.context = context;
         characterlist = characters;
     }
@@ -53,6 +52,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
                 bundle.putString("birth" , character.getDateOfBirth());
                 bundle.putString("image" , character.getImage());
                 bundle.putString("gender" , character.getGender());
+                bundle.putString("house" , character.getHouse());
+
 
                 intent.putExtras(bundle);
 
@@ -70,7 +71,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
     public class MovieHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
-        TextView name , gender , dateofBirth;
+        TextView name , gender , dateofBirth, house;
         LinearLayout linearLayout;
 
         public MovieHolder(@NonNull View itemView) {
@@ -80,6 +81,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieHolder>
             name = itemView.findViewById(R.id.name);
             gender = itemView.findViewById(R.id.gender);
             dateofBirth = itemView.findViewById(R.id.dateofbirth);
+            house = itemView.findViewById(R.id.ancestry);
             linearLayout = itemView.findViewById(R.id.main_layout);
         }
     }

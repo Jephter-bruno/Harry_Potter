@@ -16,22 +16,25 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
 
- /*       ImageView imageView = findViewById(R.id.poster_image);
-        TextView rating_tv = findViewById(R.id.mRating);
-        TextView title_tv = findViewById(R.id.mTitle);
-        TextView overview_tv = findViewById(R.id.movervie_tv);*/
+        ImageView imageView = findViewById(R.id.image);
+        TextView name = findViewById(R.id.name);
+        TextView house = findViewById(R.id.house);
+        TextView gender = findViewById(R.id.gender);
+        TextView date = findViewById(R.id.dateOfBirth);
+
 
         Bundle bundle = getIntent().getExtras();
-/*
-        String mTitle = bundle.getString("title");
-        String mPoster = bundle.getString("poster");
-        String mOverView = bundle.getString("overview");
-        double mRating = bundle.getDouble("rating");*/
+        String mname = bundle.getString("name");
+        String mimage = bundle.getString("image");
+        String mhouse = bundle.getString("house");
+        String mgender = bundle.getString("gender");
+        String mdate = bundle.getString("birth");
 
-    /*    Glide.with(this).load(mPoster).into(imageView);
-        rating_tv.setText(Double.toString(mRating));
-        title_tv.setText(mTitle);
-        overview_tv.setText(mOverView);
-*/
+        Glide.with(this).load(mimage).into(imageView);
+        name.setText(mname);
+        house.setText(mhouse);
+        gender.setText(mgender);
+        date.setText(mdate);
+
     }
 }
