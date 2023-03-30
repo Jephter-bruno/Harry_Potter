@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="horizontal"
+    android:id="@+id/main_layout"
+    android:padding="1dp">
 
     <ImageView
         android:src="@drawable/download"
         android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:scaleType="centerCrop"/>
 
     <LinearLayout
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="2dp"
         android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -32,16 +32,15 @@
                 android:text="Name :"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:textStyle="bold"/>
-        <TextView
-            android:layout_marginStart="57dp"
-            android:text="Harry Potter"
-            android:id="@+id/name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:textStyle="bold"/></LinearLayout>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="57dp"
+                android:text="Harry Potter"
+                android:textStyle="bold" /></LinearLayout>
         <LinearLayout
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
@@ -53,7 +52,6 @@
                 android:text="Gender :"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_marginStart="49sp"
@@ -75,7 +73,6 @@
                 android:text="Date of Birth :"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_marginStart="10sp"
@@ -97,7 +94,6 @@
                 android:text="Ancestry :"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
                 android:textStyle="bold"/>
             <TextView
                 android:layout_marginStart="35sp"
