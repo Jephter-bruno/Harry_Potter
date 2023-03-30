@@ -46,7 +46,6 @@ List<Characters> characters = new ArrayList<>();
             @Override
             public void onFailure(Call<List<Characters>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "Error Occured", Toast.LENGTH_SHORT).show();
-
             }
         });
     }
