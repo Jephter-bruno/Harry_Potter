@@ -16,7 +16,7 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
 
-        ImageView imageView = findViewById(R.id.image);
+        ImageView imageView = findViewById(R.id.image1);
         TextView name = findViewById(R.id.name);
         TextView house = findViewById(R.id.house);
         TextView gender = findViewById(R.id.gender);

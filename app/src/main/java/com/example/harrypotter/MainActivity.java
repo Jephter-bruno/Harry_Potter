@@ -7,47 +7,77 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Toast;
 
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class MainActivity extends AppCompatActivity {
-RecyclerView recyclerView;
-CharactersAdapter charactersAdapter;
-List<Characters> characters = new ArrayList<>();
+
+    private RecyclerView recyclerView;
+    private RequestQueue requestQueue;
+    private List<Characters> charactersList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(charactersAdapter);
-         getCharacters();
+        requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
+
+        charactersList = new ArrayList<>();
+        fetchMovies();
+
 
     }
 
-    private void getCharacters() {
-        RetrofitClient.getRetrofitClient().getCharacters().enqueue(new Callback<List<Characters>>() {
-            @Override
-            public void onResponse(Call<List<Characters>> call, Response<List<Characters>> response) {
-                List<Characters> characters = response.body();
-                if(response.isSuccessful()&& response.body() != null){
-                     characters.addAll(response.body());
-                    charactersAdapter.notifyDataSetChanged();
-                     Toast.makeText(MainActivity.this, "Characters Found", Toast.LENGTH_SHORT).show();
+    private void fetchMovies() {
 
-                 }
+        String url = "https://hp-api.onrender.com/api/characters";
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for (int i = 0 ; i < response.length() ; i ++){
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        String name = jsonObject.getString("name");
+                        String gender = jsonObject.getString("gender");
+                        String image = jsonObject.getString("image");
+                        String date = jsonObject.getString("dateOfBirth");
+                        String house = jsonObject.getString("house");
+
+                        Characters characterrs = new Characters(name , image , gender , date,house);
+                        charactersList.add(characterrs);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                    CharacterAdapter adapter = new CharacterAdapter(MainActivity.this , charactersList);
+
+                    recyclerView.setAdapter(adapter);
+                }
             }
-
+        }, new Response.ErrorListener() {
             @Override
-            public void onFailure(Call<List<Characters>> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Error Occured", Toast.LENGTH_SHORT).show();
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(MainActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
 
+        requestQueue.add(jsonArrayRequest);
+    }
 }

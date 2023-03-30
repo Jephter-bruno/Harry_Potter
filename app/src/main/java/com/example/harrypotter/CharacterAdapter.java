@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.MovieHolder> {
+public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.CharacterHolder> {
 
     private Context context;
     private List<Characters> characterlist;
@@ -28,13 +28,13 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Movi
     }
     @NonNull
     @Override
-    public MovieHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CharacterHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.character_item , parent , false);
-        return new MovieHolder(view);
+        return new CharacterHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CharacterHolder holder, int position) {
 
         Characters character = characterlist.get(position);
         holder.gender.setText(character.getGender());
@@ -54,7 +54,6 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Movi
                 bundle.putString("gender" , character.getGender());
                 bundle.putString("house" , character.getHouse());
 
-
                 intent.putExtras(bundle);
 
                 context.startActivity(intent);
@@ -68,13 +67,13 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Movi
         return characterlist.size();
     }
 
-    public class MovieHolder extends RecyclerView.ViewHolder{
+    public class CharacterHolder extends RecyclerView.ViewHolder{
 
         ImageView image;
         TextView name , gender , dateofBirth, house;
         LinearLayout linearLayout;
 
-        public MovieHolder(@NonNull View itemView) {
+        public CharacterHolder(@NonNull View itemView) {
             super(itemView);
 
             image = itemView.findViewById(R.id.image);

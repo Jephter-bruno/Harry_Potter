@@ -9,14 +9,14 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="1dp">
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/image1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="250dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@drawable/download" />
         <LinearLayout
             android:layout_marginTop="15dp"
@@ -24,12 +24,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name: " />
             <TextView
-                android:textSize="20sp"
+
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,12 +43,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alt Name: " />
             <TextView
-                android:textSize="20sp"
+
                 android:id="@+id/alternate_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,12 +61,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Species: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/spieces"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,12 +78,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender: " />
+                android:text="Date of Birth: " />
+
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,12 +96,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="House : " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/house"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -115,12 +113,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date of Birth: " />
+                android:text="Gender: " />
+
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/dateOfBirth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -133,12 +131,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wizard: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/wizard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -151,12 +148,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ancestry: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/ancestry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -169,12 +165,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Eye Colour: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/eyeColour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,12 +182,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hair Colour: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/hairColour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -204,12 +198,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wand: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/wand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -221,12 +214,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Actor: " />
             <TextView
-                android:textSize="20sp"
                 android:id="@+id/core"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -238,12 +230,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:textSize="20sp"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alive : " />
             <TextView
-                android:textSize="20sp"
+
                 android:id="@+id/wood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
