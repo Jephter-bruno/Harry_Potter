@@ -16,7 +16,7 @@
     <LinearLayout
         android:layout_marginStart="2dp"
         android:layout_gravity="center_vertical"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:orientation="vertical"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"/>
             <TextView
-                android:layout_marginStart="19sp"
+                android:layout_marginStart="9sp"
 
                 android:id="@+id/gender"
                 android:layout_width="match_parent"

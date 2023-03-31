@@ -40,6 +40,7 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
         holder.gender.setText(character.getGender());
         holder.name.setText(character.getName());
         holder.dateofBirth.setText(character.getDateOfBirth());
+        holder.house.setText(character.getHouse());
         Glide.with(context).load(character.getImage()).into(holder.image);
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,15 @@ public class CharacterAdapter extends RecyclerView.Adapter<CharacterAdapter.Char
                 bundle.putString("image" , character.getImage());
                 bundle.putString("gender" , character.getGender());
                 bundle.putString("house" , character.getHouse());
+
+                bundle.putString("species" , character.getSpecies());
+                bundle.putString("yearOfBirth" , character.getYearOfBirth());
+                bundle.putString("wizard" , character.getWizard());
+                bundle.putString("eyeColour" , character.getEyeColour());
+                bundle.putString("hairColour" , character.getHairColour());
+                bundle.putString("patronus" , character.getPatronus());
+                bundle.putString("actor" , character.getActor());
+                bundle.putString("alive" , character.getAlive());
 
                 intent.putExtras(bundle);
 

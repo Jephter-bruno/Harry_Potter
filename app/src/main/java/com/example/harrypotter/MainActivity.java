@@ -60,7 +60,17 @@ public class MainActivity extends AppCompatActivity {
                         String date = jsonObject.getString("dateOfBirth");
                         String house = jsonObject.getString("house");
 
-                        Characters characterrs = new Characters(name , image , gender , date,house);
+                        String species = jsonObject.getString("species");
+                        String year = jsonObject.getString("yearOfBirth");
+                        String wizard = jsonObject.getString("wizard");
+                        String eyecolour = jsonObject.getString("eyeColour");
+                        String haircolour = jsonObject.getString("hairColour");
+                        String patronus = jsonObject.getString("patronus");
+                        String actor = jsonObject.getString("actor");
+                        String alive = jsonObject.getString("alive");
+
+                        Characters characterrs = new Characters(name , image ,
+                                gender , date,house, species, year, wizard, eyecolour,haircolour,patronus,actor, alive);
                         charactersList.add(characterrs);
                     } catch (JSONException e) {
                         e.printStackTrace();
