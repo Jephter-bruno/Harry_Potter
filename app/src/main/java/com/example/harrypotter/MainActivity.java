@@ -5,6 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 
@@ -26,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
     private List<Characters> charactersList;
+    private EditText mSearchEditText;
+    private Button button;
+    private RecyclerView mRecyclerView;
+    private CharacterAdapter mBookAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,17 +43,32 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
+        button = findViewById(R.id.searchbutton);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         requestQueue = VolleySingleton.getmInstance(this).getRequestQueue();
 
         charactersList = new ArrayList<>();
-        fetchMovies();
+            fetchCharacters();
+        mSearchEditText = findViewById(R.id.searchView);
+
+      button.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              String query = mSearchEditText.getText().toString();
+              CharacterSearchAsyncTask task = new CharacterSearchAsyncTask(MainActivity.this, mRecyclerView, mBookAdapter);
+              task.execute(query);
+          }
+      });
 
 
-    }
 
-    private void fetchMovies() {
+
+
+}
+
+    private void fetchCharacters() {
 
         String url = "https://hp-api.onrender.com/api/characters";
 

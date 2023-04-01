@@ -5,13 +5,25 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <SearchView
+    <EditText
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:drawableLeft="@drawable/baseline_search_24"
         android:layout_marginTop="10dp"
+        android:drawablePadding="10dp"
         android:id="@+id/searchView"
+        android:hint="Search Here"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:queryHint="Search characters"
         android:iconifiedByDefault="false" />
+
+    <Button
+        android:id="@+id/searchbutton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
