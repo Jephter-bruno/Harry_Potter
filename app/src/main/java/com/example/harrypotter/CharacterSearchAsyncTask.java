@@ -35,7 +35,6 @@ public class CharacterSearchAsyncTask extends AsyncTask<String, Void, List<Chara
         String query = params[0];
         List<Characters> characters = new ArrayList<>();
 
-        // Query the Google Books API using the provided query string
         try {
             URL url = new URL("https://hp-api.onrender.com/api/characters" + query);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -52,7 +51,7 @@ public class CharacterSearchAsyncTask extends AsyncTask<String, Void, List<Chara
             inputStream.close();
             urlConnection.disconnect();
 
-            // Parse the JSON response and create Book objects
+            // Parse the JSON response and create character objects
             JSONObject root = new JSONObject(response.toString());
             JSONArray items = root.getJSONArray("characters");
             for (int i = 0; i < items.length(); i++) {
@@ -87,7 +86,7 @@ public class CharacterSearchAsyncTask extends AsyncTask<String, Void, List<Chara
     protected void onPostExecute(List<Characters> books) {
         super.onPostExecute(books);
 
-        // Update the RecyclerView with the retrieved books
+
         mRecyclerView.setAdapter(mBookAdapter);
     }
 }
