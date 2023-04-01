@@ -22,12 +22,12 @@ public class CharacterSearchAsyncTask extends AsyncTask<String, Void, List<Chara
 
     private Context mContext;
     private RecyclerView mRecyclerView;
-    private CharacterAdapter mBookAdapter;
+    private CharacterAdapter characterAdapter;
 
-    public CharacterSearchAsyncTask(Context context, RecyclerView recyclerView, CharacterAdapter bookAdapter) {
+    public CharacterSearchAsyncTask(Context context, RecyclerView recyclerView, CharacterAdapter characterAdapter) {
         mContext = context;
         mRecyclerView = recyclerView;
-        mBookAdapter = bookAdapter;
+        characterAdapter = characterAdapter;
     }
 
     @Override
@@ -87,6 +87,6 @@ public class CharacterSearchAsyncTask extends AsyncTask<String, Void, List<Chara
         super.onPostExecute(books);
 
 
-        mRecyclerView.setAdapter(mBookAdapter);
+        mRecyclerView.setAdapter(characterAdapter);
     }
 }
