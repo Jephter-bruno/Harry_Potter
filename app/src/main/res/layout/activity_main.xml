@@ -5,10 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
+    <androidx.appcompat.widget.SearchView
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:drawableLeft="@drawable/baseline_search_24"
         android:layout_marginTop="10dp"
         android:drawablePadding="10dp"
         android:id="@+id/searchView"
