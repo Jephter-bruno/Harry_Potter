@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RequestQueue requestQueue;
     private List<Characters> charactersList;
-    private SearchView mSearchEditText;
+    private EditText mSearchEditText;
     private Button button;
     private RecyclerView mRecyclerView;
     private CharacterAdapter mBookAdapter;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         charactersList = new ArrayList<>();
         fetchCharacters();
         mSearchEditText = findViewById(R.id.searchView);
-        String query = (String) mSearchEditText.getQuery();
+        String query =  mSearchEditText.getText().toString();
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,6 +11,8 @@ public interface CharacterApiService {
     Call<List<Character>> getCharacters();
 
     @GET("api/characters")
-    static Call<List<Characters>> searchCharacters(@Query("name") String name);
+    static Call<List<Characters>> searchCharacters(@Query("name") String name) {
+        return null;
+    }
 }
 
